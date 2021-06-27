@@ -1,9 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+import { useGetPokemonByNameQuery } from './services/pokemon';
 import './App.css';
 
 function App() {
+  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur');
+  if (error) return <div>Oh no, there was an error</div>;
+  if (isLoading) return <div>Loading...</div>;
   return (
     <div className="App">
       <header className="App-header">
@@ -50,6 +54,7 @@ function App() {
             React Redux
           </a>
         </span>
+        {data && (<img src={data.sprites.front_shiny} alt={data.species.name} />)}
       </header>
     </div>
   );
