@@ -15,7 +15,7 @@ docker-compose build
 
 ## node_modulesインストール
 ```
-docker-compose run --rm node sh
+docker-compose run --rm front_node sh
 yarn install
 exit
 ```
