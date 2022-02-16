@@ -9,7 +9,7 @@ export const pokemonApi = createApi({
     baseUrl: 'https://pokeapi.co/api/v2/'
     // prepareHeadersでヘッダーの指定も可能
   }),
-  // キャッシュ時間
+  // キャッシュ時間(全体)
   keepUnusedDataFor: 15,
   // storeに登録するときのキー
   reducerPath: 'pokemonApi',
@@ -20,6 +20,8 @@ export const pokemonApi = createApi({
       // クエリパラメータを付与してURLを構築する
       query: (name) => `pokemon/${name}`,
       // queryFnで独自のコールバックを構築することも可能
+        // キャッシュ時間(API単位。全体よりこっちが優先される。)
+        keepUnusedDataFor: 20,
     }),
   }),
 })
