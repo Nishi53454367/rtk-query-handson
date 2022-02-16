@@ -9,6 +9,8 @@ export const pokemonApi = createApi({
     baseUrl: 'https://pokeapi.co/api/v2/'
     // prepareHeadersでヘッダーの指定も可能
   }),
+  // キャッシュ時間
+  keepUnusedDataFor: 15,
   // storeに登録するときのキー
   reducerPath: 'pokemonApi',
   // サーバーに対して実行する操作(query、mutationの2種類)

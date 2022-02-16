@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
       <div>
-        <button onClick={() => setView('Pikachu')}>再描画時に10秒間はキャッシュを使用するピカチュウ</button>
-        <button onClick={() => setView('Bulbasaur')}>30秒間隔でポーリングするフシギダネ</button>
+        <button onClick={() => setView('Pikachu')}>ピカチュウ</button>
+        <button onClick={() => setView('Bulbasaur')}>フシギダネ</button>
       </div>
       {view === 'Pikachu' && (Pikachu())}
       {view === 'Bulbasaur' && (Bulbasaur())}

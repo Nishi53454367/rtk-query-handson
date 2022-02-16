@@ -38,6 +38,7 @@ const Bulbasaur = () => {
   return (
     <>
       {data && (<img src={data.sprites.front_shiny} alt={data.species.name} />)}
+      <li>30秒間隔でポーリング</li>
       <div>
         <button onClick={() => refetch()}>再取得</button>
       </div>
